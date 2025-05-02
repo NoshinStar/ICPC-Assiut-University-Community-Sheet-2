@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    int a, b;
+    cin >> a >> b;
+
+    int found = 0;
+
+    for (int i = a; i <= b; i++) {
+        int num = i;
+        int f = 1;
+
+        while (num > 0) {
+            int d = num % 10;
+            if (d != 4 && d != 7) {
+                f = 0;
+                break;
+            }
+            num /= 10;
+        }
+        if (f == 1) {
+            cout << i << " ";
+            found = 1;
+        }
+    }
+
+    if (found != 1) {
+        cout << "-1";
+    }
+
+    cout << endl;
+
+    return 0;
+}
